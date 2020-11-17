@@ -33,10 +33,10 @@ public class FlatManager {
     public List<Flat> search(List<String> districts, int minPrice, int maxPrice, int minRooms, int maxRooms, int checkFloor) {
         List<Flat> result = new ArrayList<>();
         for (Flat item : items) {
-            if ((item.getPrice() < minPrice) && (item.getPrice() > maxPrice)) {
+            if ((item.getPrice() < minPrice) || (item.getPrice() > maxPrice)) {
                 continue;
             }
-            if ((item.getNumberOfRooms() < minRooms) && (item.getNumberOfRooms() > maxRooms)) {
+            if ((item.getNumberOfRooms() < minRooms) || (item.getNumberOfRooms() > maxRooms)) {
                 continue;
             }
             if (item.getFloor() != checkFloor) {

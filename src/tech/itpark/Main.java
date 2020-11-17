@@ -30,7 +30,7 @@ public class Main {
         Flat f5 = manager.save(new Flat(0, districts.get(4), 3_000_000, 9, 2));
         Flat f6 = manager.save(new Flat(0, districts.get(2), 3_000_000, 4, 2));
 
-        Flat flat4 = new Flat(4, districts.get(2), 3_000_000, 6, 2);
+        Flat flat4 = new Flat(4, districts.get(2), 2_500_000, 4, 2);
         Flat f7 = manager.save(flat4);
         if (flat4.getId() == f7.getId()) {
             System.out.println("correct");
