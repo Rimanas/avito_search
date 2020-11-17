@@ -24,6 +24,8 @@ public class FlatManager {
             flat.setDistrict(item.getDistrict());
             flat.setNumberOfRooms(item.getNumberOfRooms());
             flat.setPrice(item.getPrice());
+            flat.setId(item.getId());
+            return item;
         }
         return null;
     }
