@@ -1,19 +1,23 @@
 package tech.itpark.manager;
+
 import tech.itpark.model.Flat;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class FlatManager {
-    private ArrayList<Flat> items = new ArrayList<>();
+    private List<Flat> items = new ArrayList<>();
     private int nextId = 1;
-    public Flat save(Flat item){
-        if (item.getId() == 0){
+
+    public Flat save(Flat item) {
+        if (item.getId() == 0) {
             item.setId(nextId);
             nextId++;
             items.add(item);
             return item;
         }
-        for (Flat flat : items){
-            if (flat.getId() != item.getId()){
+        for (Flat flat : items) {
+            if (flat.getId() != item.getId()) {
                 continue;
             }
             flat.setFloor(item.getFloor());
@@ -23,8 +27,9 @@ public class FlatManager {
         }
         return null;
     }
-    public ArrayList<Flat> search (ArrayList<String> districts, int minPrice, int maxPrice, int minRooms, int maxRooms, int checkFloor){
-        ArrayList<Flat> result = new ArrayList<>();
+
+    public List<Flat> search(List<String> districts, int minPrice, int maxPrice, int minRooms, int maxRooms, int checkFloor) {
+        List<Flat> result = new ArrayList<>();
         for (Flat item : items) {
             if ((item.getPrice() < minPrice) && (item.getPrice() > maxPrice)) {
                 continue;
@@ -38,7 +43,7 @@ public class FlatManager {
             if (!districts.contains(item.getDistrict())) {
                 continue;
             }
-                result.add(item);
+            result.add(item);
         }
         return result;
     }

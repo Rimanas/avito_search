@@ -4,10 +4,11 @@ import tech.itpark.manager.FlatManager;
 import tech.itpark.model.Flat;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<String> districts = new ArrayList<>();
+        List<String> districts = new ArrayList<>();
         districts.add("Ново - Савиновский");
         districts.add("Кировский");
         districts.add("Вахитовский");
@@ -16,7 +17,7 @@ public class Main {
         districts.add("Приволжский");
         districts.add("Авиастроительный");
 
-        ArrayList<String> districtSearch = new ArrayList<>();
+        List<String> districtSearch = new ArrayList<>();
         districtSearch.add(districts.get(3));
         districtSearch.add(districts.get(2));
 
@@ -27,7 +28,7 @@ public class Main {
         manager.save(new Flat(0, districts.get(0), 5_500_000, 3, 3));
         manager.save(new Flat(0, districts.get(4), 3_000_000, 9, 2));
 
-        ArrayList<Flat> searchResults = manager.search(districtSearch, 2_500_000, 3_200_000, 2, 4, 4);
+        List<Flat> searchResults = manager.search(districtSearch, 2_500_000, 3_200_000, 2, 4, 4);
         System.out.println(searchResults);
     }
 }
